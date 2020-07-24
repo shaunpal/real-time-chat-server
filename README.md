@@ -3,7 +3,7 @@ Chat Server for React app client using socket.io and socket.io-client respective
 
 # Built With
 Express, 
-Socket.io-client
+Socket.io-client,
 Cors
 
 
