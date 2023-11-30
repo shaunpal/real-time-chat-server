@@ -1,12 +1,19 @@
 const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
+const cors = require('cors');
 const router = require('./router');
 const { addUser, removeUser, getUser, getAllUsers } = require('./users');
 const PORT = process.env.PORT || 5000;
 
+corsOptions = {
+  origin: '*',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
 const app = express();
 app.use(router);
+app.use(cors(corsOptions));
 const server = http.createServer(app);
 const io = socketio(server);
 
